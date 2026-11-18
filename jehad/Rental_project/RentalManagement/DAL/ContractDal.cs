@@ -71,17 +71,17 @@ public static class ContractDal
     public static DataTable Installments(int contractId) => Db.Query($@"
         SELECT i.InstallmentId AS Id, i.Status, i.DueDate AS DueDateRaw, i.InstallmentNo AS [رقم القسط],
                i.DueDate AS [تاريخ الاستحقاق], i.Amount AS [المبلغ], i.PaidAmount AS [المدفوع],
-               i.Amount - i.PaidAmount AS [المتبقي],
+               i.Remaining AS [المتبقي],
                {Labels.Sql(Labels.SqlInstallmentStatus, "i.Status")} AS [الحالة],
-               CASE WHEN i.PaidAmount < i.Amount AND i.DueDate < CAST(SYSDATETIME() AS DATE)
+               CASE WHEN i.Remaining > 0 AND i.DueDate < CAST(SYSDATETIME() AS DATE)
                     THEN DATEDIFF(DAY, i.DueDate, CAST(SYSDATETIME() AS DATE)) END AS [أيام التأخير]
-        FROM dbo.Installment i WHERE i.ContractId = @c ORDER BY i.InstallmentNo", Db.P("@c", contractId));
+        FROM dbo.vw_InstallmentBalance i WHERE i.ContractId = @c ORDER BY i.InstallmentNo", Db.P("@c", contractId));
 
-    /// <summary>الأقساط غير المسددة بالكامل لعقد (للقائمة المنسدلة في نافذة الدفع).</summary>
+    /// <summary>الأقساط غير المسددة بالكامل لعقد (للقائمة المنسدلة في نافذة الدفع)؛ المتبقي محسوب في العرض.</summary>
     public static DataTable OpenInstallmentList(int contractId) => Db.Query(@"
         SELECT InstallmentId AS Id,
                N'قسط ' + CAST(InstallmentNo AS NVARCHAR(10)) + N' — ' + CONVERT(NVARCHAR(10), DueDate, 111)
-               + N' — المتبقي ' + FORMAT(Amount - PaidAmount, N'N3') AS Name,
-               Amount - PaidAmount AS Remaining
-        FROM dbo.Installment WHERE ContractId = @c AND PaidAmount < Amount ORDER BY InstallmentNo", Db.P("@c", contractId));
+               + N' — المتبقي ' + FORMAT(Remaining, N'N3') AS Name,
+               Remaining
+        FROM dbo.vw_InstallmentBalance WHERE ContractId = @c AND Remaining > 0 ORDER BY InstallmentNo", Db.P("@c", contractId));
 }

@@ -113,13 +113,10 @@ CREATE TABLE dbo.Installment (
     InstallmentNo INT NOT NULL,
     DueDate       DATE NOT NULL,
     Amount        DECIMAL(18,3) NOT NULL CONSTRAINT CK_Installment_Amount CHECK (Amount > 0),
-    PaidAmount    DECIMAL(18,3) NOT NULL CONSTRAINT DF_Installment_Paid DEFAULT 0,   -- maintained only by the payment procedures
-    Status        AS (CASE WHEN PaidAmount >= Amount THEN N'Paid'
-                           WHEN PaidAmount > 0 THEN N'Partial' ELSE N'Unpaid' END) PERSISTED,
-    CONSTRAINT UQ_Installment UNIQUE (ContractId, InstallmentNo),
-    CONSTRAINT CK_Installment_Paid CHECK (PaidAmount >= 0 AND PaidAmount <= Amount)   -- BR-06
+    -- المدفوع والمتبقي والحالة لا تُخزَّن: تُحسب من الدفعات في العرض vw_InstallmentBalance
+    CONSTRAINT UQ_Installment UNIQUE (ContractId, InstallmentNo)
 );
-CREATE INDEX IX_Installment_Due ON dbo.Installment(DueDate) INCLUDE (ContractId, Amount, PaidAmount);
+CREATE INDEX IX_Installment_Due ON dbo.Installment(DueDate) INCLUDE (ContractId, Amount);
 
 /* ---------- 6. Payments (each payment = one receipt) ---------- */
 CREATE TABLE dbo.Payment (
@@ -139,7 +136,7 @@ CREATE TABLE dbo.Payment (
     CancelReason  NVARCHAR(300) NULL,
     CONSTRAINT CK_Payment_Cancel CHECK (IsCancelled = 0 OR CancelledBy IS NOT NULL)
 );
-CREATE INDEX IX_Payment_Installment ON dbo.Payment(InstallmentId);
+CREATE INDEX IX_Payment_Installment ON dbo.Payment(InstallmentId) INCLUDE (Amount, IsCancelled);
 CREATE INDEX IX_Payment_Date ON dbo.Payment(PaymentDate) INCLUDE (Amount, IsCancelled);
 
 /* ---------- 7. Audit log ---------- */
@@ -155,7 +152,20 @@ CREATE TABLE dbo.AuditLog (
 CREATE INDEX IX_Audit_Created ON dbo.AuditLog(CreatedAt DESC);
 GO
 
-/* ---------- 8. Views (balances are computed, never typed) ---------- */
+/* ---------- 8. Views (balances are computed, never stored) ---------- */
+-- each installment with what was paid on it (non-cancelled receipts), what remains, and its status
+CREATE VIEW dbo.vw_InstallmentBalance AS
+SELECT  i.InstallmentId, i.ContractId, i.InstallmentNo, i.DueDate, i.Amount,
+        ISNULL(p.Paid, 0)            AS PaidAmount,
+        i.Amount - ISNULL(p.Paid, 0) AS Remaining,
+        CASE WHEN ISNULL(p.Paid, 0) >= i.Amount THEN N'Paid'
+             WHEN ISNULL(p.Paid, 0) > 0         THEN N'Partial'
+             ELSE N'Unpaid' END      AS Status
+FROM dbo.Installment i
+OUTER APPLY (SELECT SUM(pay.Amount) AS Paid FROM dbo.Payment pay
+             WHERE pay.InstallmentId = i.InstallmentId AND pay.IsCancelled = 0) p;
+GO
+
 -- every contract with its unit, tenant, totals and remaining days
 CREATE VIEW dbo.vw_ContractSummary AS
 SELECT  c.ContractId, c.ContractNo, c.UnitId, c.TenantId, c.Status, c.StartDate, c.EndDate,
@@ -172,25 +182,24 @@ JOIN dbo.Unit u     ON u.UnitId = c.UnitId
 JOIN dbo.Property p ON p.PropertyId = u.PropertyId
 JOIN dbo.Tenant t   ON t.TenantId = c.TenantId
 OUTER APPLY (
-    SELECT SUM(i.Amount) AS TotalAmount, SUM(i.PaidAmount) AS TotalPaid,
-           SUM(CASE WHEN i.DueDate < CAST(SYSDATETIME() AS DATE) THEN i.Amount - i.PaidAmount ELSE 0 END) AS OverdueAmount
-    FROM dbo.Installment i WHERE i.ContractId = c.ContractId
+    SELECT SUM(b.Amount) AS TotalAmount, SUM(b.PaidAmount) AS TotalPaid,
+           SUM(CASE WHEN b.DueDate < CAST(SYSDATETIME() AS DATE) THEN b.Remaining ELSE 0 END) AS OverdueAmount
+    FROM dbo.vw_InstallmentBalance b WHERE b.ContractId = c.ContractId
 ) s;
 GO
 
 -- BR-05: an installment is overdue when its due date has passed and it is not fully paid
 CREATE VIEW dbo.vw_OverdueInstallments AS
-SELECT  i.InstallmentId, i.ContractId, i.InstallmentNo, i.DueDate, i.Amount, i.PaidAmount,
-        i.Amount - i.PaidAmount AS Remaining,
+SELECT  i.InstallmentId, i.ContractId, i.InstallmentNo, i.DueDate, i.Amount, i.PaidAmount, i.Remaining,
         DATEDIFF(DAY, i.DueDate, CAST(SYSDATETIME() AS DATE)) AS DaysLate,
         c.ContractNo, c.Status AS ContractStatus, u.UnitNo, p.PropertyId, p.Name AS PropertyName,
         t.TenantId, t.FullName AS TenantName, t.Phone AS TenantPhone
-FROM dbo.Installment i
+FROM dbo.vw_InstallmentBalance i
 JOIN dbo.Contract c ON c.ContractId = i.ContractId
 JOIN dbo.Unit u     ON u.UnitId = c.UnitId
 JOIN dbo.Property p ON p.PropertyId = u.PropertyId
 JOIN dbo.Tenant t   ON t.TenantId = c.TenantId
-WHERE i.PaidAmount < i.Amount
+WHERE i.Remaining > 0
   AND i.DueDate < CAST(SYSDATETIME() AS DATE);
 GO
 
@@ -255,21 +264,21 @@ BEGIN
     SET NOCOUNT ON; SET XACT_ABORT ON;
     BEGIN TRAN;
         DECLARE @remaining DECIMAL(18,3), @contractId INT;
-        SELECT @remaining = Amount - PaidAmount, @contractId = ContractId
-        FROM dbo.Installment WITH (UPDLOCK, ROWLOCK) WHERE InstallmentId = @InstallmentId;
-        IF @remaining IS NULL                     THROW 50005, N'Installment not found.', 1;
+        -- قفل صف القسط حتى لا تُسجَّل دفعتان عليه في اللحظة نفسها
+        SELECT @contractId = ContractId FROM dbo.Installment WITH (UPDLOCK, ROWLOCK) WHERE InstallmentId = @InstallmentId;
+        IF @contractId IS NULL                    THROW 50005, N'Installment not found.', 1;
+        SELECT @remaining = Remaining FROM dbo.vw_InstallmentBalance WHERE InstallmentId = @InstallmentId;
         IF @Amount <= 0 OR @Amount > @remaining   THROW 50006, N'Amount must be > 0 and <= remaining.', 1;
         INSERT dbo.Payment (InstallmentId, PaymentDate, Amount, Method, ReferenceNo, Notes, ReceivedBy)
         VALUES (@InstallmentId, @Date, @Amount, @Method, @ReferenceNo, @Notes, @UserId);
         SET @PaymentId = SCOPE_IDENTITY();
-        UPDATE dbo.Installment SET PaidAmount = PaidAmount + @Amount WHERE InstallmentId = @InstallmentId;
         INSERT dbo.AuditLog (UserId, Action, EntityName, EntityId, Details)
         VALUES (@UserId, N'RecordPayment', N'Contract', @contractId, CONCAT(N'PaymentId=', @PaymentId, N', Amount=', @Amount));
     COMMIT;
 END;
 GO
 
--- receipts are not deleted: a manager cancels a wrong receipt and the installment balance is restored
+-- receipts are not deleted: a manager cancels a wrong receipt; the view then stops counting it (balance restored)
 CREATE PROCEDURE dbo.sp_CancelPayment
     @PaymentId INT, @Reason NVARCHAR(300), @ManagerId INT
 AS
@@ -278,12 +287,11 @@ BEGIN
     BEGIN TRAN;
         IF NOT EXISTS (SELECT 1 FROM dbo.[User] WHERE UserId = @ManagerId AND Role = N'Manager' AND IsActive = 1)
             THROW 50008, N'Only a manager can do this operation.', 1;
-        DECLARE @inst INT, @amount DECIMAL(18,3), @cancelled BIT;
-        SELECT @inst = InstallmentId, @amount = Amount, @cancelled = IsCancelled
+        DECLARE @inst INT, @cancelled BIT;
+        SELECT @inst = InstallmentId, @cancelled = IsCancelled
         FROM dbo.Payment WITH (UPDLOCK) WHERE PaymentId = @PaymentId;
         IF @inst IS NULL OR @cancelled = 1 THROW 50009, N'Receipt not found or already cancelled.', 1;
         UPDATE dbo.Payment SET IsCancelled = 1, CancelledBy = @ManagerId, CancelReason = @Reason WHERE PaymentId = @PaymentId;
-        UPDATE dbo.Installment SET PaidAmount = PaidAmount - @amount WHERE InstallmentId = @inst;
         INSERT dbo.AuditLog (UserId, Action, EntityName, EntityId, Details)
         VALUES (@ManagerId, N'CancelPayment', N'Payment', @PaymentId, @Reason);
     COMMIT;
@@ -310,7 +318,7 @@ BEGIN
             IF @CloseDate < @startDate SET @CloseDate = @startDate;
             -- future installments that were never paid are removed from the schedule
             DELETE i FROM dbo.Installment i
-            WHERE i.ContractId = @ContractId AND i.PaidAmount = 0
+            WHERE i.ContractId = @ContractId
               AND (i.DueDate > @CloseDate OR @beforeStart = 1)
               AND NOT EXISTS (SELECT 1 FROM dbo.Payment p WHERE p.InstallmentId = i.InstallmentId);
         END

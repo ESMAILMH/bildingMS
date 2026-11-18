@@ -36,7 +36,7 @@ public static class PaymentDal
                c.ContractNo, c.ContractId, t.FullName AS TenantName, t.NationalId, p.Name AS PropertyName, u.UnitNo, u.UnitType,
                usr.FullName AS ReceivedByName
         FROM dbo.Payment pay
-        JOIN dbo.Installment i ON i.InstallmentId = pay.InstallmentId
+        JOIN dbo.vw_InstallmentBalance i ON i.InstallmentId = pay.InstallmentId
         JOIN dbo.Contract c    ON c.ContractId = i.ContractId
         JOIN dbo.Unit u        ON u.UnitId = c.UnitId
         JOIN dbo.Property p    ON p.PropertyId = u.PropertyId

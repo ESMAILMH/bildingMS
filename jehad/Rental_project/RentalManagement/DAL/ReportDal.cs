@@ -22,7 +22,7 @@ public static class ReportDal
             (SELECT COUNT(*) FROM dbo.vw_ContractSummary WHERE Status = N'Active' AND DaysLeft < 0)              AS ExpiredOpen,
             (SELECT ISNULL(SUM(Amount), 0) FROM dbo.Payment WHERE IsCancelled = 0 AND PaymentDate >= @month)     AS CollectedMonth,
             (SELECT ISNULL(SUM(Amount), 0) FROM dbo.Payment WHERE IsCancelled = 0 AND YEAR(PaymentDate) = YEAR(@today)) AS CollectedYear,
-            (SELECT ISNULL(SUM(i.Amount - i.PaidAmount), 0) FROM dbo.Installment i
+            (SELECT ISNULL(SUM(i.Remaining), 0) FROM dbo.vw_InstallmentBalance i
                JOIN dbo.Contract c ON c.ContractId = i.ContractId
                WHERE c.Status = N'Active' AND i.DueDate >= @today AND i.DueDate < DATEADD(MONTH, 1, @month)) AS DueRestOfMonth,
             (SELECT ISNULL(SUM(MonthlyRent), 0) FROM dbo.Contract WHERE Status = N'Active') AS MonthlyIncome",
