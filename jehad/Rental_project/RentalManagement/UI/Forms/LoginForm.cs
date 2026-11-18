@@ -10,6 +10,13 @@ public partial class LoginForm : Form
         InitializeComponent();
         Ui.ApplyIcon(this);
         lblOrg.Text = AppSettings.OfficeName;
+        // أيقونة النظام فوق اسم البرنامج بدل الرمز التعبيري
+        if (Ui.AppIcon is { } icon)
+        {
+            lblIcon.Text = "";
+            lblIcon.Image = new Icon(icon, 48, 48).ToBitmap();
+            lblIcon.ImageAlign = ContentAlignment.MiddleCenter;
+        }
         txtUser.PlaceholderText = "اسم المستخدم";
         txtPass.PlaceholderText = "كلمة المرور";
     }
