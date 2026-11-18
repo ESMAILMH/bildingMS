@@ -54,17 +54,17 @@
             this.pnlButtons.Controls.Add(this.btnClose);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.Size = new System.Drawing.Size(100, 58);
-            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(10, 10, 10, 6);
             this.pnlButtons.Name = "pnlButtons";
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Size = new System.Drawing.Size(120, 36);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -75,11 +75,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Size = new System.Drawing.Size(120, 36);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.ClientSize = new System.Drawing.Size(1000, 520);
             this.MinimizeBox = false;
             this.ShowInTaskbar = false;
@@ -100,7 +100,7 @@
             this.Text = "سجل";
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pnlButtons);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "GridDialog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

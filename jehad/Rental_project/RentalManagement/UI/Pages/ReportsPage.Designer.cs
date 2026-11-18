@@ -82,7 +82,7 @@
             // lblPreviewTitle
             // 
             this.lblPreviewTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPreviewTitle.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewTitle.Font = new System.Drawing.Font("Tajawal", 12F, System.Drawing.FontStyle.Bold);
             this.lblPreviewTitle.Size = new System.Drawing.Size(600, 32);
             this.lblPreviewTitle.Text = "";
             this.lblPreviewTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,11 +102,11 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.FlatAppearance.BorderSize = 0;
-            this.btnShow.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnShow.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Size = new System.Drawing.Size(110, 36);
             this.btnShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -117,11 +117,11 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Size = new System.Drawing.Size(110, 36);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -132,11 +132,11 @@
             // 
             // btnPdf
             // 
-            this.btnPdf.BackColor = System.Drawing.Color.FromArgb(192, 57, 43);
+            this.btnPdf.BackColor = System.Drawing.Color.FromArgb(166, 61, 47);
             this.btnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPdf.FlatAppearance.BorderSize = 0;
-            this.btnPdf.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPdf.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPdf.ForeColor = System.Drawing.Color.White;
             this.btnPdf.Size = new System.Drawing.Size(90, 36);
             this.btnPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -147,11 +147,11 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(62, 125, 58);
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.FlatAppearance.BorderSize = 0;
-            this.btnExcel.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExcel.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnExcel.ForeColor = System.Drawing.Color.White;
             this.btnExcel.Size = new System.Drawing.Size(90, 36);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -336,7 +336,7 @@
             this.lstReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstReports.Dock = System.Windows.Forms.DockStyle.Right;
             this.lstReports.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.lstReports.Font = new System.Drawing.Font("Cairo", 10.5F);
+            this.lstReports.Font = new System.Drawing.Font("Tajawal", 10.5F);
             this.lstReports.IntegralHeight = false;
             this.lstReports.ItemHeight = 34;
             this.lstReports.Size = new System.Drawing.Size(280, 560);
@@ -346,8 +346,8 @@
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblTitle.Font = new System.Drawing.Font("Tajawal", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblTitle.Size = new System.Drawing.Size(900, 44);
             this.lblTitle.Text = "التقارير";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,13 +357,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.Padding = new System.Windows.Forms.Padding(20, 14, 20, 14);
             this.Size = new System.Drawing.Size(1100, 650);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lstReports);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "ReportsPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();

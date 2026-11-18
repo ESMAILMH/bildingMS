@@ -12,9 +12,9 @@ namespace RentalManagement.Forms;
 /// </summary>
 public partial class MainForm : Form
 {
-    private static readonly Color ActiveBack = Color.FromArgb(30, 77, 120);
-    private static readonly Color ActiveStripe = Color.FromArgb(96, 175, 255);
-    private static readonly Color MenuText = Color.FromArgb(203, 213, 225);
+    private static readonly Color ActiveBack = Color.FromArgb(85, 107, 47);
+    private static readonly Color ActiveStripe = Color.FromArgb(212, 175, 55);
+    private static readonly Color MenuText = Color.FromArgb(226, 228, 210);
     private static readonly Font MenuFont = new(Theme.FontName, 10.5F);
     private static readonly Font MenuFontActive = new(Theme.FontName, 10.5F, FontStyle.Bold);
 
@@ -192,7 +192,7 @@ public partial class MainForm : Form
             var s = ReportDal.Stats(AppSettings.ContractAlertDays);
             _alerts = Convert.ToInt32(s["OverdueCount"]) + Convert.ToInt32(s["Expiring"]) + Convert.ToInt32(s["ExpiredOpen"]);
             btnAlerts.Text = ButtonText(btnAlerts);
-            if (btnAlerts != _active) btnAlerts.ForeColor = _alerts > 0 ? Color.FromArgb(255, 196, 92) : MenuText;
+            if (btnAlerts != _active) btnAlerts.ForeColor = _alerts > 0 ? Color.FromArgb(242, 201, 76) : MenuText;
         }
         catch (Exception) { /* لا نوقف الواجهة بسبب العدّاد */ }
     }

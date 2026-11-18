@@ -45,7 +45,7 @@ public partial class DashboardPage : PageBase
         AddCard("🏢", "العقارات", s["Properties"], $"{units} وحدة", Theme.Primary, "Properties");
         AddCard("🔑", "وحدات مؤجرة", rented, occupancy, Theme.Info, "Units");
         AddCard("🚪", "وحدات شاغرة", s["Vacant"], $"تحت الصيانة: {s["Maintenance"]}", Theme.Success, "Units");
-        AddCard("📄", "عقود نشطة", s["ActiveContracts"], $"{s["Tenants"]} مستأجر فعّال", Color.FromArgb(111, 66, 193), "Contracts");
+        AddCard("📄", "عقود نشطة", s["ActiveContracts"], $"{s["Tenants"]} مستأجر فعّال", Color.FromArgb(156, 107, 48), "Contracts");
         AddCard("⛔", "أقساط متأخرة", s["OverdueCount"], Ui.Money((decimal)s["OverdueAmount"]), Theme.Danger, "Alerts");
         AddCard("⏳", "عقود تنتهي قريباً", Convert.ToInt32(s["Expiring"]) + Convert.ToInt32(s["ExpiredOpen"]),
             $"خلال {AppSettings.ContractAlertDays} يوماً أو انتهت", Theme.Warning, "Alerts");

@@ -16,10 +16,10 @@ internal static class Program
         Application.ThreadException += (_, e) => Ui.ShowError(e.Exception);
         AppSettings.Load();
 
-        // خط Cairo: يُثبَّت تلقائياً عند أول تشغيل، ويظهر بعد إعادة تشغيل البرنامج
+        // خط Tajawal: يُثبَّت تلقائياً عند أول تشغيل، ويظهر بعد إعادة تشغيل البرنامج
         if (FontSetup.EnsureInstalled())
         {
-            Ui.Info("تم تثبيت خط Cairo على هذا الجهاز.\nسيُغلق البرنامج الآن، افتحه مرة أخرى ليظهر بالخط الجديد.");
+            Ui.Info("تم تثبيت خط Tajawal على هذا الجهاز.\nسيُغلق البرنامج الآن، افتحه مرة أخرى ليظهر بالخط الجديد.");
             return;
         }
 

@@ -64,7 +64,7 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Name = "pnlContent";
             // 
@@ -74,7 +74,7 @@
             this.pnlSidebar.Controls.Add(this.lblFooter);
             this.pnlSidebar.Controls.Add(this.pnlUser);
             this.pnlSidebar.Controls.Add(this.pnlBrand);
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Size = new System.Drawing.Size(240, 700);
             this.pnlSidebar.Name = "pnlSidebar";
@@ -104,8 +104,8 @@
             // 
             // lblSecMain
             // 
-            this.lblSecMain.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSecMain.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblSecMain.Font = new System.Drawing.Font("Tajawal", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSecMain.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblSecMain.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.lblSecMain.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.lblSecMain.Size = new System.Drawing.Size(224, 24);
@@ -115,13 +115,13 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnDashboard.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnDashboard.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(224, 38);
@@ -134,13 +134,13 @@
             // 
             // btnAlerts
             // 
-            this.btnAlerts.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnAlerts.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnAlerts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlerts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlerts.FlatAppearance.BorderSize = 0;
-            this.btnAlerts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnAlerts.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnAlerts.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnAlerts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnAlerts.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnAlerts.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnAlerts.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnAlerts.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnAlerts.Size = new System.Drawing.Size(224, 38);
@@ -153,8 +153,8 @@
             // 
             // lblSecOps
             // 
-            this.lblSecOps.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSecOps.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblSecOps.Font = new System.Drawing.Font("Tajawal", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSecOps.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblSecOps.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.lblSecOps.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.lblSecOps.Size = new System.Drawing.Size(224, 24);
@@ -164,13 +164,13 @@
             // 
             // btnContracts
             // 
-            this.btnContracts.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnContracts.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnContracts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContracts.FlatAppearance.BorderSize = 0;
-            this.btnContracts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnContracts.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnContracts.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnContracts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnContracts.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnContracts.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnContracts.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnContracts.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnContracts.Size = new System.Drawing.Size(224, 38);
@@ -183,13 +183,13 @@
             // 
             // btnPayments
             // 
-            this.btnPayments.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnPayments.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnPayments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayments.FlatAppearance.BorderSize = 0;
-            this.btnPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnPayments.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnPayments.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnPayments.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnPayments.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnPayments.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnPayments.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnPayments.Size = new System.Drawing.Size(224, 38);
@@ -202,8 +202,8 @@
             // 
             // lblSecData
             // 
-            this.lblSecData.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSecData.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblSecData.Font = new System.Drawing.Font("Tajawal", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSecData.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblSecData.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.lblSecData.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.lblSecData.Size = new System.Drawing.Size(224, 24);
@@ -213,13 +213,13 @@
             // 
             // btnProperties
             // 
-            this.btnProperties.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnProperties.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnProperties.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProperties.FlatAppearance.BorderSize = 0;
-            this.btnProperties.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnProperties.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnProperties.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnProperties.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnProperties.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnProperties.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnProperties.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnProperties.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnProperties.Size = new System.Drawing.Size(224, 38);
@@ -232,13 +232,13 @@
             // 
             // btnUnits
             // 
-            this.btnUnits.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnUnits.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnUnits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnits.FlatAppearance.BorderSize = 0;
-            this.btnUnits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnUnits.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnUnits.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnUnits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnUnits.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnUnits.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnUnits.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnUnits.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnUnits.Size = new System.Drawing.Size(224, 38);
@@ -251,13 +251,13 @@
             // 
             // btnTenants
             // 
-            this.btnTenants.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnTenants.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnTenants.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTenants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTenants.FlatAppearance.BorderSize = 0;
-            this.btnTenants.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnTenants.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnTenants.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnTenants.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnTenants.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnTenants.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnTenants.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnTenants.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnTenants.Size = new System.Drawing.Size(224, 38);
@@ -270,8 +270,8 @@
             // 
             // lblSecAdmin
             // 
-            this.lblSecAdmin.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSecAdmin.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblSecAdmin.Font = new System.Drawing.Font("Tajawal", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSecAdmin.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblSecAdmin.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.lblSecAdmin.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.lblSecAdmin.Size = new System.Drawing.Size(224, 24);
@@ -281,13 +281,13 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnReports.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnReports.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnReports.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnReports.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnReports.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnReports.Size = new System.Drawing.Size(224, 38);
@@ -300,13 +300,13 @@
             // 
             // btnUsers
             // 
-            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnUsers.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnUsers.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnUsers.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnUsers.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(224, 38);
@@ -319,13 +319,13 @@
             // 
             // btnAudit
             // 
-            this.btnAudit.BackColor = System.Drawing.Color.FromArgb(23, 37, 56);
+            this.btnAudit.BackColor = System.Drawing.Color.FromArgb(44, 56, 30);
             this.btnAudit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAudit.FlatAppearance.BorderSize = 0;
-            this.btnAudit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 58, 84);
-            this.btnAudit.Font = new System.Drawing.Font("Cairo", 10.5F);
-            this.btnAudit.ForeColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.btnAudit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(60, 76, 40);
+            this.btnAudit.Font = new System.Drawing.Font("Tajawal", 10.5F);
+            this.btnAudit.ForeColor = System.Drawing.Color.FromArgb(226, 228, 210);
             this.btnAudit.Margin = new System.Windows.Forms.Padding(8, 1, 8, 1);
             this.btnAudit.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnAudit.Size = new System.Drawing.Size(224, 38);
@@ -339,8 +339,8 @@
             // lblFooter
             // 
             this.lblFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFooter.Font = new System.Drawing.Font("Cairo", 8.5F);
-            this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblFooter.Font = new System.Drawing.Font("Tajawal", 8.5F);
+            this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblFooter.Size = new System.Drawing.Size(240, 34);
             this.lblFooter.Text = "نظام إدارة العقارات والإيجارات";
             this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -353,13 +353,13 @@
             this.pnlUser.Controls.Add(this.lblUserRole);
             this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUser.Size = new System.Drawing.Size(240, 64);
-            this.pnlUser.BackColor = System.Drawing.Color.FromArgb(30, 46, 68);
+            this.pnlUser.BackColor = System.Drawing.Color.FromArgb(52, 66, 36);
             this.pnlUser.Name = "pnlUser";
             // 
             // lblAvatar
             // 
-            this.lblAvatar.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
-            this.lblAvatar.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold);
+            this.lblAvatar.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
+            this.lblAvatar.Font = new System.Drawing.Font("Tajawal", 14F, System.Drawing.FontStyle.Bold);
             this.lblAvatar.ForeColor = System.Drawing.Color.White;
             this.lblAvatar.Location = new System.Drawing.Point(14, 11);
             this.lblAvatar.Size = new System.Drawing.Size(42, 42);
@@ -370,7 +370,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoEllipsis = true;
-            this.lblUserName.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblUserName.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblUserName.ForeColor = System.Drawing.Color.White;
             this.lblUserName.Location = new System.Drawing.Point(64, 8);
             this.lblUserName.Size = new System.Drawing.Size(166, 26);
@@ -380,8 +380,8 @@
             // 
             // lblUserRole
             // 
-            this.lblUserRole.Font = new System.Drawing.Font("Cairo", 9F);
-            this.lblUserRole.ForeColor = System.Drawing.Color.FromArgb(120, 138, 160);
+            this.lblUserRole.Font = new System.Drawing.Font("Tajawal", 9F);
+            this.lblUserRole.ForeColor = System.Drawing.Color.FromArgb(176, 180, 140);
             this.lblUserRole.Location = new System.Drawing.Point(64, 34);
             this.lblUserRole.Size = new System.Drawing.Size(166, 22);
             this.lblUserRole.Text = "الدور";
@@ -398,7 +398,7 @@
             // lblLogo
             // 
             this.lblLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLogo.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold);
+            this.lblLogo.Font = new System.Drawing.Font("Tajawal", 13F, System.Drawing.FontStyle.Bold);
             this.lblLogo.ForeColor = System.Drawing.Color.White;
             this.lblLogo.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.lblLogo.Text = "🏢  إدارة العقارات";
@@ -428,11 +428,11 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(192, 57, 43);
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(166, 61, 47);
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Size = new System.Drawing.Size(130, 36);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -443,11 +443,11 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
-            this.btnChangePassword.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChangePassword.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Size = new System.Drawing.Size(150, 36);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -458,11 +458,11 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(13, 110, 153);
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(70, 110, 120);
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSettings.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Size = new System.Drawing.Size(130, 36);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -474,8 +474,8 @@
             // lblPageTitle
             // 
             this.lblPageTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblPageTitle.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblPageTitle.Font = new System.Drawing.Font("Tajawal", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblPageTitle.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.lblPageTitle.Size = new System.Drawing.Size(520, 58);
             this.lblPageTitle.Text = "الشاشة الرئيسية";
@@ -486,7 +486,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.ClientSize = new System.Drawing.Size(1280, 760);
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1150, 700);
@@ -495,7 +495,7 @@
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

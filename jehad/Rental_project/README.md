@@ -105,11 +105,11 @@ dotnet publish RentalManagement/RentalManagement.csproj -c Release -r win-x64 --
 2. شغّل `Database/RentalDB_Full.sql` (أو `01_RentalDB.sql` لقاعدة فارغة).
 3. شغّل `RentalManagement.exe`، وعدّل اسم الخادم من «إعدادات الاتصال» في شاشة الدخول إن لزم.
 
-## الخط: Cairo
+## الخط: Tajawal
 
-كل البرنامج (الشاشات والتقارير المطبوعة) يستخدم خط **Cairo** (ملفاته في `RentalManagement/Fonts`، رخصة SIL Open Font License).
+كل البرنامج (الشاشات والتقارير المطبوعة) يستخدم خط **Tajawal** (ملفاته في `RentalManagement/Fonts`، رخصة SIL Open Font License).
 عند أول تشغيل يثبّته البرنامج تلقائياً للمستخدم الحالي ثم يطلب إعادة فتحه مرة واحدة.
-ليظهر داخل مصمم Visual Studio: ثبّت `Cairo-Regular.ttf` و `Cairo-Bold.ttf` يدوياً ثم أعد تشغيل Visual Studio.
+ليظهر داخل مصمم Visual Studio: ثبّت `Tajawal-Regular.ttf` و `Tajawal-Bold.ttf` يدوياً ثم أعد تشغيل Visual Studio.
 
 ## تعديل الشاشات من المصمم (Designer)
 

@@ -42,7 +42,7 @@
             // pnlGrid
             // 
             this.pnlGrid.Controls.Add(this.grid);
-            this.pnlGrid.BackColor = System.Drawing.Color.FromArgb(222, 226, 232);
+            this.pnlGrid.BackColor = System.Drawing.Color.FromArgb(221, 216, 196);
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrid.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pnlGrid.Name = "pnlGrid";
@@ -58,7 +58,7 @@
             // lblCount
             // 
             this.lblCount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblCount.Size = new System.Drawing.Size(900, 28);
             this.lblCount.Text = "";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,11 +76,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Size = new System.Drawing.Size(130, 36);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -91,11 +91,11 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(13, 110, 153);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(70, 110, 120);
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Size = new System.Drawing.Size(130, 36);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -106,11 +106,11 @@
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(214, 137, 16);
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(201, 149, 43);
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnReset.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Size = new System.Drawing.Size(220, 36);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -132,15 +132,15 @@
             this.lblRoles.AutoSize = true;
             this.lblRoles.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.lblRoles.Text = "مدير: كل الصلاحيات + المستخدمون والإعدادات وفسخ العقود وإلغاء الإيصالات وسجل العمليات — موظف: العقارات والمستأجرون والعقود والدفعات والتقارير";
-            this.lblRoles.Font = new System.Drawing.Font("Cairo", 9F);
-            this.lblRoles.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblRoles.Font = new System.Drawing.Font("Tajawal", 9F);
+            this.lblRoles.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblRoles.Name = "lblRoles";
             // 
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblTitle.Font = new System.Drawing.Font("Tajawal", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblTitle.Size = new System.Drawing.Size(900, 42);
             this.lblTitle.Text = "المستخدمون والصلاحيات";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.Padding = new System.Windows.Forms.Padding(20, 14, 20, 10);
             this.Size = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnlGrid);
@@ -158,7 +158,7 @@
             this.Controls.Add(this.flpActions);
             this.Controls.Add(this.flpFilters);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "UsersPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();

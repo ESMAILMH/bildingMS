@@ -59,8 +59,8 @@
             this.lblContract.AutoEllipsis = true;
             this.lblContract.Location = new System.Drawing.Point(196, 64);
             this.lblContract.Size = new System.Drawing.Size(384, 27);
-            this.lblContract.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.lblContract.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblContract.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.lblContract.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblContract.Text = "—";
             this.lblContract.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblContract.Name = "lblContract";
@@ -80,8 +80,8 @@
             this.lblNewStart.AutoEllipsis = true;
             this.lblNewStart.Location = new System.Drawing.Point(196, 104);
             this.lblNewStart.Size = new System.Drawing.Size(384, 27);
-            this.lblNewStart.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNewStart.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblNewStart.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNewStart.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblNewStart.Text = "—";
             this.lblNewStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNewStart.Name = "lblNewStart";
@@ -93,7 +93,7 @@
             this.lblEnd.Size = new System.Drawing.Size(170, 27);
             this.lblEnd.Text = "تاريخ النهاية الجديد *";
             this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblEnd.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEnd.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblEnd.Name = "lblEnd";
             // 
             // dtpEnd
@@ -111,7 +111,7 @@
             this.lblRent.Size = new System.Drawing.Size(170, 27);
             this.lblRent.Text = "الإيجار الشهري *";
             this.lblRent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblRent.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRent.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblRent.Name = "lblRent";
             // 
             // numRent
@@ -132,7 +132,7 @@
             this.lblCycle.Size = new System.Drawing.Size(170, 27);
             this.lblCycle.Text = "دورية الدفع *";
             this.lblCycle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCycle.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCycle.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblCycle.Name = "lblCycle";
             // 
             // cmbCycle
@@ -157,8 +157,8 @@
             this.lblPreview.AutoEllipsis = true;
             this.lblPreview.Location = new System.Drawing.Point(196, 264);
             this.lblPreview.Size = new System.Drawing.Size(384, 27);
-            this.lblPreview.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.lblPreview.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblPreview.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPreview.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblPreview.Text = "—";
             this.lblPreview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPreview.Name = "lblPreview";
@@ -168,7 +168,7 @@
             this.lblNote.AutoSize = false;
             this.lblNote.Location = new System.Drawing.Point(16, 304);
             this.lblNote.Size = new System.Drawing.Size(564, 44);
-            this.lblNote.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblNote.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblNote.Text = "يُغلق العقد الحالي في تاريخ نهايته، ويُنشأ عقد جديد لنفس الوحدة والمستأجر مع جدول أقساط جديد.";
             this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNote.Name = "lblNote";
@@ -177,7 +177,7 @@
             // 
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Controls.Add(this.btnCancel);
-            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.Size = new System.Drawing.Size(600, 60);
             this.pnlButtons.Name = "pnlButtons";
@@ -185,11 +185,11 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(16, 12);
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Size = new System.Drawing.Size(140, 36);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -201,11 +201,11 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(166, 12);
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Size = new System.Drawing.Size(120, 36);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -216,9 +216,9 @@
             // 
             // lblHeader
             // 
-            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Font = new System.Drawing.Font("Tajawal", 12F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.lblHeader.Size = new System.Drawing.Size(600, 48);
@@ -255,7 +255,7 @@
             this.Controls.Add(this.lblNote);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.lblHeader);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "RenewContractDialog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

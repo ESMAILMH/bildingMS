@@ -89,8 +89,8 @@
             // lblStatus
             // 
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStatus.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            this.lblStatus.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(40, 40, 30);
             this.lblStatus.Size = new System.Drawing.Size(380, 34);
             this.lblStatus.Text = "🚪  الوحدات حسب الحالة";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,8 +118,8 @@
             // lblChart
             // 
             this.lblChart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblChart.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
-            this.lblChart.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            this.lblChart.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Bold);
+            this.lblChart.ForeColor = System.Drawing.Color.FromArgb(40, 40, 30);
             this.lblChart.Size = new System.Drawing.Size(380, 34);
             this.lblChart.Text = "💰  التحصيل في آخر 6 أشهر";
             this.lblChart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,11 +145,11 @@
             // 
             // btnQuickContract
             // 
-            this.btnQuickContract.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnQuickContract.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnQuickContract.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuickContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickContract.FlatAppearance.BorderSize = 0;
-            this.btnQuickContract.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnQuickContract.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnQuickContract.ForeColor = System.Drawing.Color.White;
             this.btnQuickContract.Size = new System.Drawing.Size(150, 36);
             this.btnQuickContract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -160,11 +160,11 @@
             // 
             // btnQuickPayment
             // 
-            this.btnQuickPayment.BackColor = System.Drawing.Color.FromArgb(214, 137, 16);
+            this.btnQuickPayment.BackColor = System.Drawing.Color.FromArgb(201, 149, 43);
             this.btnQuickPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuickPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickPayment.FlatAppearance.BorderSize = 0;
-            this.btnQuickPayment.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnQuickPayment.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnQuickPayment.ForeColor = System.Drawing.Color.White;
             this.btnQuickPayment.Size = new System.Drawing.Size(150, 36);
             this.btnQuickPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -175,11 +175,11 @@
             // 
             // btnQuickTenant
             // 
-            this.btnQuickTenant.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.btnQuickTenant.BackColor = System.Drawing.Color.FromArgb(62, 125, 58);
             this.btnQuickTenant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuickTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickTenant.FlatAppearance.BorderSize = 0;
-            this.btnQuickTenant.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnQuickTenant.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnQuickTenant.ForeColor = System.Drawing.Color.White;
             this.btnQuickTenant.Size = new System.Drawing.Size(150, 36);
             this.btnQuickTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -190,11 +190,11 @@
             // 
             // btnQuickReports
             // 
-            this.btnQuickReports.BackColor = System.Drawing.Color.FromArgb(13, 110, 153);
+            this.btnQuickReports.BackColor = System.Drawing.Color.FromArgb(70, 110, 120);
             this.btnQuickReports.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuickReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickReports.FlatAppearance.BorderSize = 0;
-            this.btnQuickReports.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnQuickReports.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnQuickReports.ForeColor = System.Drawing.Color.White;
             this.btnQuickReports.Size = new System.Drawing.Size(150, 36);
             this.btnQuickReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -206,7 +206,7 @@
             // lblDate
             // 
             this.lblDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblDate.Size = new System.Drawing.Size(900, 26);
             this.lblDate.Text = "التاريخ";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,8 +215,8 @@
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblTitle.Font = new System.Drawing.Font("Tajawal", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblTitle.Size = new System.Drawing.Size(900, 44);
             this.lblTitle.Text = "مرحباً";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.Padding = new System.Windows.Forms.Padding(20, 10, 20, 14);
             this.Size = new System.Drawing.Size(1100, 760);
             this.Controls.Add(this.pnlBody);
@@ -234,7 +234,7 @@
             this.Controls.Add(this.flpQuick);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "DashboardPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flpQuick.ResumeLayout(false);

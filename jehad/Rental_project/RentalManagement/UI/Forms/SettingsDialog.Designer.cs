@@ -50,7 +50,7 @@
             this.lblOffice.Size = new System.Drawing.Size(210, 27);
             this.lblOffice.Text = "اسم المكتب / المالك *";
             this.lblOffice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblOffice.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblOffice.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblOffice.Name = "lblOffice";
             // 
             // txtOffice
@@ -100,7 +100,7 @@
             this.lblAlertDays.Size = new System.Drawing.Size(210, 27);
             this.lblAlertDays.Text = "التنبيه قبل انتهاء العقد (يوم) *";
             this.lblAlertDays.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAlertDays.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAlertDays.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblAlertDays.Name = "lblAlertDays";
             // 
             // numAlertDays
@@ -118,7 +118,7 @@
             this.lblBackupInfo.AutoSize = false;
             this.lblBackupInfo.Location = new System.Drawing.Point(16, 224);
             this.lblBackupInfo.Size = new System.Drawing.Size(584, 44);
-            this.lblBackupInfo.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblBackupInfo.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblBackupInfo.Text = "النسخة الاحتياطية تُحفظ بواسطة خدمة SQL Server: اختر مجلداً على جهاز الخادم (مثل C:\\Backup).";
             this.lblBackupInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblBackupInfo.Name = "lblBackupInfo";
@@ -145,7 +145,7 @@
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnBackup);
-            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.Size = new System.Drawing.Size(620, 60);
             this.pnlButtons.Name = "pnlButtons";
@@ -153,11 +153,11 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(16, 12);
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Size = new System.Drawing.Size(120, 36);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -169,11 +169,11 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(146, 12);
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Size = new System.Drawing.Size(120, 36);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -185,11 +185,11 @@
             // btnBackup
             // 
             this.btnBackup.Location = new System.Drawing.Point(276, 12);
-            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(62, 125, 58);
             this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnBackup.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnBackup.ForeColor = System.Drawing.Color.White;
             this.btnBackup.Size = new System.Drawing.Size(200, 36);
             this.btnBackup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -200,9 +200,9 @@
             // 
             // lblHeader
             // 
-            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Font = new System.Drawing.Font("Tajawal", 12F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.lblHeader.Size = new System.Drawing.Size(620, 48);
@@ -237,7 +237,7 @@
             this.Controls.Add(this.txtBackupFolder);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.lblHeader);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "SettingsDialog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

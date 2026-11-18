@@ -5,7 +5,7 @@ using Microsoft.Win32;
 namespace RentalManagement.Common;
 
 /// <summary>
-/// خط البرنامج Cairo غير موجود في Windows افتراضياً، لذلك يأتي مع البرنامج في مجلد Fonts
+/// خط البرنامج Tajawal غير موجود في Windows افتراضياً، لذلك يأتي مع البرنامج في مجلد Fonts
 /// ويُثبَّت تلقائياً للمستخدم الحالي عند أول تشغيل (لا يحتاج صلاحيات مدير).
 /// </summary>
 public static class FontSetup
@@ -45,7 +45,7 @@ public static class FontSetup
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or System.Security.SecurityException)
         {
-            Ui.Warn("تعذر تثبيت خط Cairo تلقائياً. ثبّته يدوياً من مجلد Fonts بجانب البرنامج:\n" +
+            Ui.Warn("تعذر تثبيت خط Tajawal تلقائياً. ثبّته يدوياً من مجلد Fonts بجانب البرنامج:\n" +
                     "زر الفأرة الأيمن على الملف ← تثبيت.\n\n" + ex.Message);
             return false;
         }

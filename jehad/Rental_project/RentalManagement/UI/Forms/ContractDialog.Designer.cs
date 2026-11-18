@@ -80,7 +80,7 @@
             this.lblUnit.Size = new System.Drawing.Size(140, 27);
             this.lblUnit.Text = "الوحدة الشاغرة *";
             this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUnit.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblUnit.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblUnit.Name = "lblUnit";
             // 
             // cmbUnit
@@ -97,7 +97,7 @@
             this.lblTenant.Size = new System.Drawing.Size(140, 27);
             this.lblTenant.Text = "المستأجر *";
             this.lblTenant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTenant.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTenant.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblTenant.Name = "lblTenant";
             // 
             // cmbTenant
@@ -114,7 +114,7 @@
             this.lblStart.Size = new System.Drawing.Size(140, 27);
             this.lblStart.Text = "تاريخ البداية *";
             this.lblStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblStart.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblStart.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblStart.Name = "lblStart";
             // 
             // dtpStart
@@ -148,7 +148,7 @@
             this.lblEnd.Size = new System.Drawing.Size(140, 27);
             this.lblEnd.Text = "تاريخ النهاية *";
             this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblEnd.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEnd.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblEnd.Name = "lblEnd";
             // 
             // dtpEnd
@@ -166,7 +166,7 @@
             this.lblRent.Size = new System.Drawing.Size(140, 27);
             this.lblRent.Text = "الإيجار الشهري *";
             this.lblRent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblRent.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRent.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblRent.Name = "lblRent";
             // 
             // numRent
@@ -187,7 +187,7 @@
             this.lblCycle.Size = new System.Drawing.Size(140, 27);
             this.lblCycle.Text = "دورية الدفع *";
             this.lblCycle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCycle.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCycle.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.lblCycle.Name = "lblCycle";
             // 
             // cmbCycle
@@ -241,8 +241,8 @@
             this.lblScheduleTitle.AutoEllipsis = true;
             this.lblScheduleTitle.Location = new System.Drawing.Point(504, 60);
             this.lblScheduleTitle.Size = new System.Drawing.Size(480, 30);
-            this.lblScheduleTitle.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
-            this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblScheduleTitle.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Bold);
+            this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblScheduleTitle.Text = "📅 جدول الأقساط (معاينة قبل الحفظ)";
             this.lblScheduleTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblScheduleTitle.Name = "lblScheduleTitle";
@@ -262,8 +262,8 @@
             this.lblTotal.AutoEllipsis = true;
             this.lblTotal.Location = new System.Drawing.Point(504, 482);
             this.lblTotal.Size = new System.Drawing.Size(476, 30);
-            this.lblTotal.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblTotal.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblTotal.Text = "—";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTotal.Name = "lblTotal";
@@ -273,7 +273,7 @@
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnNewTenant);
-            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.Size = new System.Drawing.Size(1000, 60);
             this.pnlButtons.Name = "pnlButtons";
@@ -281,11 +281,11 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(16, 12);
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Size = new System.Drawing.Size(140, 36);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -297,11 +297,11 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(166, 12);
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Size = new System.Drawing.Size(120, 36);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -313,11 +313,11 @@
             // btnNewTenant
             // 
             this.btnNewTenant.Location = new System.Drawing.Point(296, 12);
-            this.btnNewTenant.BackColor = System.Drawing.Color.FromArgb(13, 110, 153);
+            this.btnNewTenant.BackColor = System.Drawing.Color.FromArgb(70, 110, 120);
             this.btnNewTenant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewTenant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTenant.FlatAppearance.BorderSize = 0;
-            this.btnNewTenant.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNewTenant.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnNewTenant.ForeColor = System.Drawing.Color.White;
             this.btnNewTenant.Size = new System.Drawing.Size(160, 36);
             this.btnNewTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -328,9 +328,9 @@
             // 
             // lblHeader
             // 
-            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Font = new System.Drawing.Font("Tajawal", 12F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.lblHeader.Size = new System.Drawing.Size(1000, 48);
@@ -377,7 +377,7 @@
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.lblHeader);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "ContractDialog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

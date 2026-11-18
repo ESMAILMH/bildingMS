@@ -229,7 +229,7 @@ public static partial class Ui
         g.ColumnHeadersHeight = 44;
         g.CellBorderStyle = DataGridViewCellBorderStyle.Single;                 // فواصل بين الأعمدة والصفوف
         g.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;     // فواصل بين عناوين الأعمدة
-        g.GridColor = Color.FromArgb(200, 206, 214);
+        g.GridColor = Color.FromArgb(209, 203, 180);
         g.RowTemplate.Height = 32;
         g.ColumnHeadersDefaultCellStyle.BackColor = Theme.Primary;
         g.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -238,7 +238,7 @@ public static partial class Ui
         g.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False; // العنوان في سطر واحد كامل
         g.DefaultCellStyle.Padding = new Padding(6, 0, 6, 0);
         g.ColumnHeadersDefaultCellStyle.SelectionBackColor = Theme.Primary;
-        g.DefaultCellStyle.SelectionBackColor = Color.FromArgb(207, 226, 243);
+        g.DefaultCellStyle.SelectionBackColor = Color.FromArgb(233, 226, 192);
         g.DefaultCellStyle.SelectionForeColor = Theme.Text;
         g.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         g.AlternatingRowsDefaultCellStyle.BackColor = Theme.GridAlt;

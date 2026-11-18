@@ -233,7 +233,7 @@ public sealed class ReportPrinter
         if (Session.Current != null) meta += $"     المستخدم: {Session.Current.DisplayName}";
         g.DrawString(meta, FooterFont, Brushes.DimGray, new RectangleF(b.Left, y, b.Width, 18), Format(StringAlignment.Near));
         y += 20;
-        using var pen = new Pen(Color.FromArgb(30, 77, 120), 2);
+        using var pen = new Pen(Color.FromArgb(85, 107, 47), 2);
         g.DrawLine(pen, b.Left, y, b.Right, y);
         return y + 10;
     }
@@ -251,8 +251,8 @@ public sealed class ReportPrinter
         float h = font.GetHeight(g) + 10;
         float x = b.Right;
         var fmt = Format();
-        using var headerBrush = new SolidBrush(Color.FromArgb(222, 231, 241));
-        using var altBrush = new SolidBrush(Color.FromArgb(247, 249, 251));
+        using var headerBrush = new SolidBrush(Color.FromArgb(236, 231, 210));
+        using var altBrush = new SolidBrush(Color.FromArgb(250, 248, 240));
         for (int i = 0; i < values.Length; i++)
         {
             float w = _widths![i];

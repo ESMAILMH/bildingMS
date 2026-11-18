@@ -57,7 +57,7 @@
             // pnlGrid
             // 
             this.pnlGrid.Controls.Add(this.grid);
-            this.pnlGrid.BackColor = System.Drawing.Color.FromArgb(222, 226, 232);
+            this.pnlGrid.BackColor = System.Drawing.Color.FromArgb(221, 216, 196);
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrid.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pnlGrid.Name = "pnlGrid";
@@ -73,7 +73,7 @@
             // lblCount
             // 
             this.lblCount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.lblCount.Size = new System.Drawing.Size(900, 28);
             this.lblCount.Text = "";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -97,11 +97,11 @@
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnNew.BackColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.FlatAppearance.BorderSize = 0;
-            this.btnNew.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNew.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Size = new System.Drawing.Size(140, 36);
             this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -112,11 +112,11 @@
             // 
             // btnDetails
             // 
-            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(13, 110, 153);
+            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(70, 110, 120);
             this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.FlatAppearance.BorderSize = 0;
-            this.btnDetails.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDetails.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnDetails.ForeColor = System.Drawing.Color.White;
             this.btnDetails.Size = new System.Drawing.Size(120, 36);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -127,11 +127,11 @@
             // 
             // btnPay
             // 
-            this.btnPay.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(62, 125, 58);
             this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.FlatAppearance.BorderSize = 0;
-            this.btnPay.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPay.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Size = new System.Drawing.Size(140, 36);
             this.btnPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -142,11 +142,11 @@
             // 
             // btnPrintContract
             // 
-            this.btnPrintContract.BackColor = System.Drawing.Color.FromArgb(111, 66, 193);
+            this.btnPrintContract.BackColor = System.Drawing.Color.FromArgb(156, 107, 48);
             this.btnPrintContract.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrintContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintContract.FlatAppearance.BorderSize = 0;
-            this.btnPrintContract.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPrintContract.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintContract.ForeColor = System.Drawing.Color.White;
             this.btnPrintContract.Size = new System.Drawing.Size(150, 36);
             this.btnPrintContract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -157,11 +157,11 @@
             // 
             // btnRenew
             // 
-            this.btnRenew.BackColor = System.Drawing.Color.FromArgb(214, 137, 16);
+            this.btnRenew.BackColor = System.Drawing.Color.FromArgb(201, 149, 43);
             this.btnRenew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRenew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRenew.FlatAppearance.BorderSize = 0;
-            this.btnRenew.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRenew.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnRenew.ForeColor = System.Drawing.Color.White;
             this.btnRenew.Size = new System.Drawing.Size(110, 36);
             this.btnRenew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -172,11 +172,11 @@
             // 
             // btnEnd
             // 
-            this.btnEnd.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnEnd.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnEnd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnd.FlatAppearance.BorderSize = 0;
-            this.btnEnd.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEnd.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnEnd.ForeColor = System.Drawing.Color.White;
             this.btnEnd.Size = new System.Drawing.Size(110, 36);
             this.btnEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -187,11 +187,11 @@
             // 
             // btnTerminate
             // 
-            this.btnTerminate.BackColor = System.Drawing.Color.FromArgb(192, 57, 43);
+            this.btnTerminate.BackColor = System.Drawing.Color.FromArgb(166, 61, 47);
             this.btnTerminate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTerminate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerminate.FlatAppearance.BorderSize = 0;
-            this.btnTerminate.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTerminate.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnTerminate.ForeColor = System.Drawing.Color.White;
             this.btnTerminate.Size = new System.Drawing.Size(110, 36);
             this.btnTerminate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -202,11 +202,11 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(122, 118, 100);
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Size = new System.Drawing.Size(130, 36);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -217,11 +217,11 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(62, 125, 58);
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.FlatAppearance.BorderSize = 0;
-            this.btnExcel.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExcel.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
             this.btnExcel.ForeColor = System.Drawing.Color.White;
             this.btnExcel.Size = new System.Drawing.Size(100, 36);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -246,9 +246,9 @@
             this.btnChipActive.BackColor = System.Drawing.Color.White;
             this.btnChipActive.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChipActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChipActive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 77, 120);
-            this.btnChipActive.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChipActive.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnChipActive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 107, 47);
+            this.btnChipActive.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChipActive.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnChipActive.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.btnChipActive.Size = new System.Drawing.Size(150, 34);
             this.btnChipActive.Tag = "Active";
@@ -261,9 +261,9 @@
             this.btnChipEnded.BackColor = System.Drawing.Color.White;
             this.btnChipEnded.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChipEnded.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChipEnded.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 77, 120);
-            this.btnChipEnded.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChipEnded.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnChipEnded.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 107, 47);
+            this.btnChipEnded.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChipEnded.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnChipEnded.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.btnChipEnded.Size = new System.Drawing.Size(150, 34);
             this.btnChipEnded.Tag = "Ended";
@@ -276,9 +276,9 @@
             this.btnChipTerminated.BackColor = System.Drawing.Color.White;
             this.btnChipTerminated.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChipTerminated.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChipTerminated.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 77, 120);
-            this.btnChipTerminated.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChipTerminated.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnChipTerminated.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 107, 47);
+            this.btnChipTerminated.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChipTerminated.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnChipTerminated.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.btnChipTerminated.Size = new System.Drawing.Size(150, 34);
             this.btnChipTerminated.Tag = "Terminated";
@@ -291,9 +291,9 @@
             this.btnChipAll.BackColor = System.Drawing.Color.White;
             this.btnChipAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChipAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChipAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 77, 120);
-            this.btnChipAll.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChipAll.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.btnChipAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 107, 47);
+            this.btnChipAll.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChipAll.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.btnChipAll.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.btnChipAll.Size = new System.Drawing.Size(150, 34);
             this.btnChipAll.Tag = "";
@@ -342,8 +342,8 @@
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(30, 77, 120);
+            this.lblTitle.Font = new System.Drawing.Font("Tajawal", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(85, 107, 47);
             this.lblTitle.Size = new System.Drawing.Size(900, 42);
             this.lblTitle.Text = "عقود الإيجار";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 245, 248);
+            this.BackColor = System.Drawing.Color.FromArgb(246, 244, 236);
             this.Padding = new System.Windows.Forms.Padding(20, 14, 20, 10);
             this.Size = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnlGrid);
@@ -362,7 +362,7 @@
             this.Controls.Add(this.flpStatus);
             this.Controls.Add(this.flpFilters);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("Cairo", 10F);
+            this.Font = new System.Drawing.Font("Tajawal", 10F);
             this.Name = "ContractsPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
