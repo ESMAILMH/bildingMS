@@ -40,6 +40,7 @@ public partial class ReportsPage : UserControl, IPage
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
+        if (!DesignMode) ButtonStyle.Apply(this);
         if (!DesignMode && !_loaded) Ui.Try(RefreshData);
     }
 

@@ -38,6 +38,7 @@ public class PageBase : UserControl, IPage
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
+        if (!DesignMode) ButtonStyle.Apply(this);   // شكل الأزرار الموحّد (زوايا دائرية، رئيسي ممتلئ والباقي محدد)
         if (_loaded || DesignMode || _grid == null) return;
         _loaded = true;
         Ui.Try(RefreshData);

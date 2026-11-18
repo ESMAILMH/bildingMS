@@ -25,6 +25,12 @@ public class DialogBase : Form
         }
     }
 
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+        if (!DesignMode) ButtonStyle.Apply(this);
+    }
+
     /// <summary>عند فتح النافذة يوضع المؤشر في أول حقل قابل للكتابة (الأعلى في النافذة).</summary>
     protected override void OnShown(EventArgs e)
     {

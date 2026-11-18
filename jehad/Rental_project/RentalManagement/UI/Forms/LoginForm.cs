@@ -10,6 +10,7 @@ public partial class LoginForm : Form
         InitializeComponent();
         Ui.ApplyIcon(this);
         lblOrg.Text = AppSettings.OfficeName;
+        ButtonStyle.Apply(this);
         // أيقونة النظام فوق اسم البرنامج بدل الرمز التعبيري
         if (Ui.AppIcon is { } icon)
         {

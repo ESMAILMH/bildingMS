@@ -55,6 +55,7 @@ public partial class MainForm : Form
             RoundCorners(b);
         }
         ApplyRole(user);
+        ButtonStyle.Apply(pnlHeader);   // أزرار الشريط العلوي فقط؛ أزرار القائمة الجانبية لها شكلها الخاص
 
         KeyDown += (_, e) =>   // F5 = تحديث الصفحة الحالية
         {

@@ -10,6 +10,7 @@ public partial class GridDialog : Form
         InitializeComponent();
         Ui.ApplyIcon(this);
         Ui.StyleGrid(grid);
+        ButtonStyle.Apply(this);
         Text = title;
         _load = load;
         Load += (_, _) => Ui.Try(() => Ui.BindGrid(grid, _load()));
