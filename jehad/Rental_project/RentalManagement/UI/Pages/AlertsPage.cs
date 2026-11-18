@@ -18,12 +18,14 @@ public partial class AlertsPage : PageBase
         cmbProperty.SelectedIndexChanged += Filter_Changed;
         InitChips("overdue", btnChipOverdue, btnChipExpiring);
         InitRowActions(btnDetails, btnPay, btnDetails, btnRenew, btnEnd);
+        // اللون حسب أعمدة جدول الصف نفسه (لا حسب التبويب): عند تبديل التبويب قد يُرسم صف من الجدول السابق قبل ربط الجديد
         grid.CellFormatting += (_, e) =>
         {
             if (e.RowIndex < 0 || grid.Rows[e.RowIndex].DataBoundItem is not DataRowView r) return;
-            if (Overdue)
-                e.CellStyle!.ForeColor = (int)r["DaysLateRaw"] > 30 ? Theme.Danger : Theme.Warning;
-            else if (r["أيام متبقية"] is int days)
+            var cols = r.Row.Table.Columns;
+            if (cols.Contains("DaysLateRaw") && r["DaysLateRaw"] is int late)
+                e.CellStyle!.ForeColor = late > 30 ? Theme.Danger : Theme.Warning;
+            else if (cols.Contains("أيام متبقية") && r["أيام متبقية"] is int days)
                 e.CellStyle!.ForeColor = days < 0 ? Theme.Danger : Theme.Warning;
         };
     }
@@ -52,10 +54,11 @@ public partial class AlertsPage : PageBase
     {
         btnPay.Visible = Overdue;
         btnRenew.Visible = btnEnd.Visible = !Overdue;
-        btnEnd.Enabled = row != null && !Overdue && row["أيام متبقية"] is int d && d <= 0;
+        btnEnd.Enabled = row != null && !Overdue && row.Row.Table.Columns.Contains("أيام متبقية") && row["أيام متبقية"] is int d && d <= 0;
     }
 
-    private int? ContractId => RequireSelection() is { } r ? (int)r[Overdue ? "ContractId" : "Id"] : null;
+    /// <summary>رقم العقد للصف المحدد: في جدول المتأخرات عمود ContractId، وفي جدول العقود Id.</summary>
+    private int? ContractId => RequireSelection() is { } r ? (int)r[r.Row.Table.Columns.Contains("ContractId") ? "ContractId" : "Id"] : null;
 
     private void btnPay_Click(object? sender, EventArgs e) => Ui.Try(() =>
     {

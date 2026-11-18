@@ -13,7 +13,7 @@ public partial class UnitsPage : PageBase
         txtSearch.PlaceholderText = "رقم الوحدة، العقار، المستأجر...";
         cmbProperty.SelectedIndexChanged += Filter_Changed;
         InitChips(null, btnChipAll, btnChipVacant, btnChipRented, btnChipMaintenance);
-        InitRowActions(btnEdit, btnEdit, btnContract);
+        InitRowActions(btnEdit, btnEdit, btnContract, btnPhotos);
         Ui.ColorBy(grid, "Status", "الحالة", Ui.UnitStatusColor);
     }
 
@@ -43,6 +43,11 @@ public partial class UnitsPage : PageBase
         Ui.Try(() => { if (RequireSelection() is { } r) OpenDialog(new UnitDialog((int)r["Id"])); });
     private void btnContract_Click(object? sender, EventArgs e) =>
         Ui.Try(() => { if (RequireSelection() is { } r) OpenDialog(new ContractDialog((int)r["Id"])); });
+
+    private void btnPhotos_Click(object? sender, EventArgs e) => Ui.Try(() =>
+    {
+        if (RequireSelection() is { } r) OpenDialog(new PhotosDialog(null, (int)r["Id"], $"{r["العقار"]} / وحدة {r["رقم الوحدة"]}"));
+    });
 
     private void btnPrint_Click(object? sender, EventArgs e) =>
         Ui.Try(() => PrintGrid("الوحدات", cmbProperty.SelectedIndex > 0 ? "العقار: " + cmbProperty.Text : null));

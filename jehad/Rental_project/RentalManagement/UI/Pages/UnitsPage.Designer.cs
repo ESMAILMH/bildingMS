@@ -30,6 +30,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnContract = new System.Windows.Forms.Button();
+            this.btnPhotos = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.flpStatus = new System.Windows.Forms.FlowLayoutPanel();
@@ -80,6 +81,7 @@
             this.flpActions.Controls.Add(this.btnAdd);
             this.flpActions.Controls.Add(this.btnEdit);
             this.flpActions.Controls.Add(this.btnContract);
+            this.flpActions.Controls.Add(this.btnPhotos);
             this.flpActions.Controls.Add(this.btnPrint);
             this.flpActions.Controls.Add(this.btnExcel);
             this.flpActions.Dock = System.Windows.Forms.DockStyle.Top;
@@ -131,6 +133,21 @@
             this.btnContract.UseVisualStyleBackColor = false;
             this.btnContract.Name = "btnContract";
             this.btnContract.Click += new System.EventHandler(this.btnContract_Click);
+            // 
+            // btnPhotos
+            // 
+            this.btnPhotos.BackColor = System.Drawing.Color.FromArgb(156, 107, 48);
+            this.btnPhotos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPhotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhotos.FlatAppearance.BorderSize = 0;
+            this.btnPhotos.Font = new System.Drawing.Font("Tajawal", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPhotos.ForeColor = System.Drawing.Color.White;
+            this.btnPhotos.Size = new System.Drawing.Size(130, 36);
+            this.btnPhotos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPhotos.Text = "🖼 الصور";
+            this.btnPhotos.UseVisualStyleBackColor = false;
+            this.btnPhotos.Name = "btnPhotos";
+            this.btnPhotos.Click += new System.EventHandler(this.btnPhotos_Click);
             // 
             // btnPrint
             // 
@@ -319,6 +336,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnContract;
+        private System.Windows.Forms.Button btnPhotos;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.FlowLayoutPanel flpStatus;

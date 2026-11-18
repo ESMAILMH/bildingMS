@@ -208,7 +208,8 @@ public static class ReportCatalog
             new ReportSection("بيانات العقد", info, false),
             new ReportSection("جدول الأقساط", schedule),
             new ReportSection("البنود", terms, false),
-        }, $"حُرّر بتاريخ {DateTime.Today:yyyy/MM/dd}", new[] { "الطرف الأول (المؤجر)", "الطرف الثاني (المستأجر)" });
+        }, $"حُرّر بتاريخ {DateTime.Today:yyyy/MM/dd}", new[] { "الطرف الأول (المؤجر)", "الطرف الثاني (المستأجر)" })
+        { Picture = Ui.ToImage(PhotoDal.FirstUnitImage((int)c["UnitId"])) };   // أول صورة للوحدة في أعلى العقد
     }
 
     /// <summary>إيصال قبض لدفعة (FR-20): المبلغ رقماً وكتابةً.</summary>

@@ -12,7 +12,7 @@ public partial class PropertiesPage : PageBase
         InitPage(grid, lblCount, txtSearch);
         txtSearch.PlaceholderText = "اسم العقار، المدينة، العنوان...";
         InitChips("active", btnChipActive, btnChipInactive, btnChipAll);
-        InitRowActions(btnEdit, btnEdit, btnUnits);
+        InitRowActions(btnEdit, btnEdit, btnUnits, btnPhotos);
         grid.CellFormatting += (_, e) =>
         {
             if (e.RowIndex >= 0 && grid.Rows[e.RowIndex].DataBoundItem is DataRowView r && !(bool)r["IsActive"])
@@ -44,6 +44,9 @@ public partial class PropertiesPage : PageBase
         using var d = new GridDialog($"وحدات العقار: {r["العقار"]}", () => PropertyDal.Units(id, null, null));
         d.ShowDialog(FindForm());
     });
+
+    private void btnPhotos_Click(object? sender, EventArgs e) =>
+        Ui.Try(() => { if (RequireSelection() is { } r) OpenDialog(new PhotosDialog((int)r["Id"], null, (string)r["العقار"])); });
 
     private void btnPrint_Click(object? sender, EventArgs e) => Ui.Try(() => PrintGrid("العقارات"));
     private void btnExcel_Click(object? sender, EventArgs e) => Ui.Try(() => ExportGrid("العقارات"));

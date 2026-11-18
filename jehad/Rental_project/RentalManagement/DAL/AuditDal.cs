@@ -26,6 +26,7 @@ public static class AuditDal
             WHEN N'CreateContract' THEN N'إبرام عقد' WHEN N'RenewContract' THEN N'تجديد عقد'
             WHEN N'EndContract' THEN N'إنهاء عقد' WHEN N'TerminateContract' THEN N'فسخ عقد'
             WHEN N'RecordPayment' THEN N'تسجيل دفعة' WHEN N'CancelPayment' THEN N'إلغاء إيصال'
+            WHEN N'AddPhoto' THEN N'إضافة صورة' WHEN N'DeletePhoto' THEN N'حذف صورة'
             WHEN N'Settings' THEN N'تعديل الإعدادات' WHEN N'Backup' THEN N'نسخ احتياطي'
             ELSE l.Action END";
 

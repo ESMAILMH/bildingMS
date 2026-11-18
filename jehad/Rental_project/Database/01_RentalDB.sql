@@ -139,6 +139,22 @@ CREATE TABLE dbo.Payment (
 CREATE INDEX IX_Payment_Installment ON dbo.Payment(InstallmentId) INCLUDE (Amount, IsCancelled);
 CREATE INDEX IX_Payment_Date ON dbo.Payment(PaymentDate) INCLUDE (Amount, IsCancelled);
 
+/* ---------- 6b. Photos of properties and units ---------- */
+-- كل صورة تخص عقاراً أو وحدة (واحداً منهما فقط)، وتُحفظ مصغّرة (أقصى بُعد 1600 بكسل) بحد أقصى 2 ميغابايت
+CREATE TABLE dbo.Photo (
+    PhotoId    INT IDENTITY(1,1) CONSTRAINT PK_Photo PRIMARY KEY,
+    PropertyId INT NULL CONSTRAINT FK_Photo_Property REFERENCES dbo.Property(PropertyId),
+    UnitId     INT NULL CONSTRAINT FK_Photo_Unit     REFERENCES dbo.Unit(UnitId),
+    Image      VARBINARY(MAX) NOT NULL,
+    Caption    NVARCHAR(150) NULL,
+    CreatedBy  INT NOT NULL CONSTRAINT FK_Photo_User REFERENCES dbo.[User](UserId),
+    CreatedAt  DATETIME2 NOT NULL CONSTRAINT DF_Photo_Created DEFAULT SYSDATETIME(),
+    CONSTRAINT CK_Photo_Owner CHECK ((PropertyId IS NOT NULL AND UnitId IS NULL) OR (PropertyId IS NULL AND UnitId IS NOT NULL)),
+    CONSTRAINT CK_Photo_Size  CHECK (DATALENGTH(Image) <= 2097152)
+);
+CREATE INDEX IX_Photo_Property ON dbo.Photo(PropertyId) WHERE PropertyId IS NOT NULL;
+CREATE INDEX IX_Photo_Unit     ON dbo.Photo(UnitId)     WHERE UnitId IS NOT NULL;
+
 /* ---------- 7. Audit log ---------- */
 CREATE TABLE dbo.AuditLog (
     LogId      BIGINT IDENTITY(1,1) CONSTRAINT PK_AuditLog PRIMARY KEY,

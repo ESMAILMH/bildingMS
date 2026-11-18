@@ -12,6 +12,7 @@ public static class PropertyDal
                (SELECT COUNT(*) FROM dbo.Unit u WHERE u.PropertyId = p.PropertyId) AS [عدد الوحدات],
                (SELECT COUNT(*) FROM dbo.Unit u WHERE u.PropertyId = p.PropertyId AND u.Status = N'Rented') AS [مؤجرة],
                (SELECT COUNT(*) FROM dbo.Unit u WHERE u.PropertyId = p.PropertyId AND u.Status = N'Vacant') AS [شاغرة],
+               (SELECT COUNT(*) FROM dbo.Photo ph WHERE ph.PropertyId = p.PropertyId) AS [الصور],
                {string.Format(ActiveText, "p.IsActive")} AS [الحالة]
         FROM dbo.Property p
         WHERE @s IS NULL OR p.Name LIKE N'%' + @s + N'%' OR p.City LIKE N'%' + @s + N'%' OR p.Address LIKE N'%' + @s + N'%'
@@ -42,7 +43,8 @@ public static class PropertyDal
         SELECT u.UnitId AS Id, u.PropertyId, u.Status, p.Name AS [العقار], u.UnitNo AS [رقم الوحدة], u.UnitType AS [النوع],
                u.FloorNo AS [الطابق], u.Area AS [المساحة م²], u.Rooms AS [الغرف], u.MonthlyRent AS [الإيجار الشهري],
                {Labels.Sql(Labels.SqlUnitStatus, "u.Status")} AS [الحالة],
-               t.FullName AS [المستأجر الحالي], c.EndDate AS [ينتهي العقد في], u.Notes AS [ملاحظات]
+               t.FullName AS [المستأجر الحالي], c.EndDate AS [ينتهي العقد في],
+               (SELECT COUNT(*) FROM dbo.Photo ph WHERE ph.UnitId = u.UnitId) AS [الصور], u.Notes AS [ملاحظات]
         FROM dbo.Unit u
         JOIN dbo.Property p ON p.PropertyId = u.PropertyId
         LEFT JOIN dbo.Contract c ON c.UnitId = u.UnitId AND c.Status = N'Active'
