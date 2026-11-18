@@ -1,31 +1,28 @@
-using System.Drawing.Drawing2D;
 using RentalManagement.BLL;
-using RentalManagement.DAL;
 using RentalManagement.Pages;
 
 namespace RentalManagement.Forms;
 
 /// <summary>
-/// النافذة الرئيسية: قائمة جانبية مقسمة إلى مجموعات + شريط علوي باسم الصفحة الحالية + منطقة عرض الصفحة.
-/// أزرار القائمة وعناوين المجموعات مصممة في المصمم؛ كل زر يحمل في Tag اسم الصفحة التي يفتحها،
-/// ونصه بالشكل "رمز   الاسم". ما لا يسمح به دور المستخدم يُخفى عند التشغيل.
+/// النافذة الرئيسية: شريط علوي (الشعار واسم النظام والمكتب وأزرار المستخدم)،
+/// ثم شريط تنقل أفقي بالصفحات مقسّم إلى مجموعات بفواصل، ثم الصفحة بعرض الشاشة كاملاً، وشريط حالة في الأسفل.
+/// كل زر تنقل يحمل في Tag اسم الصفحة التي يفتحه؛ وما لا يسمح به دور المستخدم يُخفى عند التشغيل.
 /// </summary>
 public partial class MainForm : Form
 {
-    private static readonly Color ActiveBack = Color.FromArgb(85, 107, 47);
-    private static readonly Color ActiveStripe = Color.FromArgb(212, 175, 55);
-    private static readonly Color MenuText = Color.FromArgb(226, 228, 210);
-    private static readonly Font MenuFont = new(Theme.FontName, 10.5F);
-    private static readonly Font MenuFontActive = new(Theme.FontName, 10.5F, FontStyle.Bold);
+    private static readonly Color Gold = Color.FromArgb(212, 175, 55);
+    private static readonly Color NavText = Color.FromArgb(95, 92, 75);
+    private static readonly Font NavFont = new(Theme.FontName, 11F);
+    private static readonly Font NavFontActive = new(Theme.FontName, 11F, FontStyle.Bold);
 
     private readonly Dictionary<string, Control> _pages = new();
-    private readonly Dictionary<Button, (string Icon, string Name)> _items = new();
-    private readonly HashSet<Control> _allowed = new();        // ما يسمح به الدور من أزرار وعناوين
     private readonly System.Windows.Forms.Timer _alertTimer = new() { Interval = 5 * 60 * 1000 };
     private Button? _active;
     private int _alerts;
 
     public bool LogoutRequested { get; private set; }
+
+    private IEnumerable<Button> NavButtons => flpNav.Controls.OfType<Button>();
 
     public MainForm()
     {
@@ -33,29 +30,15 @@ public partial class MainForm : Form
         Ui.ApplyIcon(this);
         var user = Session.Current ?? throw new InvalidOperationException("لا يوجد مستخدم مسجل.");
         Text = "نظام إدارة العقارات والإيجارات - " + AppSettings.OfficeName;
-        lblFooter.Text = AppSettings.OfficeName;
+        lblOffice.Text = AppSettings.OfficeName;
+        lblUser.Text = $"{user.DisplayName}  ·  {Labels.Of(Labels.Roles, user.Role.ToString())}";
+        if (Ui.AppIcon is { } icon) picLogo.Image = new Icon(icon, 48, 48).ToBitmap();
         btnSettings.Visible = user.Role == UserRole.Manager;
+        lblStatus.Text = StatusText(user);
 
-        // بطاقة المستخدم: أول حرف من الاسم داخل دائرة
-        lblUserName.Text = user.DisplayName;
-        lblUserRole.Text = Labels.Of(Labels.Roles, user.Role.ToString());
-        lblAvatar.Text = user.DisplayName.Trim().FirstOrDefault().ToString();
-        using (var circle = new GraphicsPath())
-        {
-            circle.AddEllipse(0, 0, lblAvatar.Width, lblAvatar.Height);
-            lblAvatar.Region = new Region(circle);
-        }
-
-        foreach (var b in flpMenu.Controls.OfType<Button>())
-        {
-            var parts = b.Text.Split("   ", 2);
-            _items[b] = (parts[0], parts.Length > 1 ? parts[1] : b.Text);
-            b.Paint += MenuButton_Paint;
-            b.SizeChanged += (_, _) => RoundCorners(b);
-            RoundCorners(b);
-        }
         ApplyRole(user);
-        ButtonStyle.Apply(pnlHeader);   // أزرار الشريط العلوي فقط؛ أزرار القائمة الجانبية لها شكلها الخاص
+        foreach (var b in NavButtons) b.Paint += Nav_Paint;
+        ButtonStyle.Apply(flpUser);   // أزرار المستخدم فقط؛ أزرار التنقل لها شكلها (خط ذهبي تحت الصفحة الحالية)
 
         KeyDown += (_, e) =>   // F5 = تحديث الصفحة الحالية
         {
@@ -65,66 +48,28 @@ public partial class MainForm : Form
         };
         _alertTimer.Tick += (_, _) => UpdateAlertCount();
         _alertTimer.Start();
-        Shown += (_, _) => _items.Keys.First(b => b.Visible).PerformClick();
+        Shown += (_, _) => NavButtons.First(b => b.Visible).PerformClick();
+    }
+
+    /// <summary>شريط الحالة: المستخدم والتاريخ وقاعدة البيانات المتصل بها.</summary>
+    private static string StatusText(AppUser user)
+    {
+        string db = "", server = "";
+        try
+        {
+            var b = new SqlConnectionStringBuilder(AppSettings.ConnectionString);
+            db = b.InitialCatalog; server = b.DataSource;
+        }
+        catch (ArgumentException) { /* نص اتصال غير صالح */ }
+        return $"المستخدم: {user.Username}     |     {DateTime.Today:yyyy/MM/dd}     |     قاعدة البيانات: {db} على {server}";
     }
 
     // ------------------------------------------------------------ الصلاحيات
-    /// <summary>
-    /// يظهر من القائمة ما يسمح به دور المستخدم فقط (والصلاحية تُفحص أيضاً داخل كل عملية في طبقة المنطق).
-    /// عنوان المجموعة يُخفى إذا لم يبقَ تحته أي زر ظاهر.
-    /// </summary>
+    /// <summary>المستخدمون وسجل العمليات للمدير فقط (والصلاحية تُفحص أيضاً داخل كل عملية في طبقة المنطق).</summary>
     private void ApplyRole(AppUser user)
     {
         bool manager = user.Role == UserRole.Manager;
-        Label? section = null;
-        foreach (Control c in flpMenu.Controls)
-        {
-            if (c is Label l) { section = l; continue; }
-            bool ok = (string)c.Tag! switch
-            {
-                "Users" or "Audit" => manager,
-                _ => true
-            };
-            if (!ok) continue;
-            _allowed.Add(c);
-            if (section != null) _allowed.Add(section);
-        }
-        RenderMenu();
-    }
-
-    // ------------------------------------------------------------ شكل القائمة
-    /// <summary>القائمة ثابتة: تظهر الأزرار والعناوين المسموح بها فقط.</summary>
-    private void RenderMenu()
-    {
-        foreach (Control c in flpMenu.Controls) c.Visible = _allowed.Contains(c);
-    }
-
-    private string ButtonText(Button b)
-    {
-        var (icon, name) = _items[b];
-        return b == btnAlerts && _alerts > 0 ? $"{icon}   {name}  ({_alerts})" : $"{icon}   {name}";
-    }
-
-    /// <summary>زوايا دائرية للأزرار.</summary>
-    private static void RoundCorners(Button b)
-    {
-        using var path = new GraphicsPath();
-        const int r = 10;
-        var rect = new Rectangle(0, 0, b.Width, b.Height);
-        path.AddArc(rect.X, rect.Y, r, r, 180, 90);
-        path.AddArc(rect.Right - r, rect.Y, r, r, 270, 90);
-        path.AddArc(rect.Right - r, rect.Bottom - r, r, r, 0, 90);
-        path.AddArc(rect.X, rect.Bottom - r, r, r, 90, 90);
-        path.CloseFigure();
-        b.Region = new Region(path);
-    }
-
-    /// <summary>شريط ملوّن على جانب الزر النشط.</summary>
-    private void MenuButton_Paint(object? sender, PaintEventArgs e)
-    {
-        if (sender != _active) return;
-        using var brush = new SolidBrush(ActiveStripe);
-        e.Graphics.FillRectangle(brush, 0, 8, 4, ((Control)sender!).Height - 16); // في الواجهة العربية يظهر على اليمين
+        btnNavUsers.Visible = btnNavAudit.Visible = manager;
     }
 
     // ------------------------------------------------------------ التنقل بين الصفحات
@@ -144,7 +89,7 @@ public partial class MainForm : Form
         _ => throw new ArgumentException(key)
     };
 
-    private void Menu_Click(object? sender, EventArgs e)
+    private void Nav_Click(object? sender, EventArgs e)
     {
         if (sender is not Button button) return;
         Ui.Try(() =>
@@ -167,38 +112,44 @@ public partial class MainForm : Form
             _active = button;
             if (previous != null)
             {
-                previous.BackColor = Theme.Sidebar;
-                previous.ForeColor = MenuText;
-                previous.Font = MenuFont;
+                previous.Font = NavFont;
+                previous.ForeColor = NavText;
                 previous.Invalidate();
             }
-            button.BackColor = ActiveBack;
-            button.ForeColor = Color.White;
-            button.Font = MenuFontActive;
-            lblPageTitle.Text = $"{_items[button].Icon}  {_items[button].Name}";
+            button.Font = NavFontActive;
+            button.ForeColor = Theme.Primary;
+            button.Invalidate();
             UpdateAlertCount();
         });
     }
 
+    /// <summary>خط ذهبي تحت زر الصفحة الحالية.</summary>
+    private void Nav_Paint(object? sender, PaintEventArgs e)
+    {
+        if (sender != _active) return;
+        var b = (Control)sender!;
+        using var brush = new SolidBrush(Gold);
+        e.Graphics.FillRectangle(brush, 10, b.Height - 4, b.Width - 20, 4);
+    }
+
     /// <summary>فتح صفحة باسمها (كما في Tag الزر)، إذا كان الدور يسمح بها.</summary>
     private void OpenPage(string key) =>
-        _items.Keys.FirstOrDefault(b => (string)b.Tag! == key && _allowed.Contains(b))?.PerformClick();
+        NavButtons.FirstOrDefault(b => (string)b.Tag! == key && b.Visible)?.PerformClick();
 
-    /// <summary>عدّاد التنبيهات على زر التنبيهات: الأقساط المتأخرة + العقود القريبة من الانتهاء (FR-24).</summary>
+    /// <summary>عدد التنبيهات على زر التنبيهات: الأقساط المتأخرة + العقود القريبة من الانتهاء (FR-24).</summary>
     private void UpdateAlertCount()
     {
-        if (!_allowed.Contains(btnAlerts)) return;
         try
         {
-            var s = ReportDal.Stats(AppSettings.ContractAlertDays);
+            var s = DAL.ReportDal.Stats(AppSettings.ContractAlertDays);
             _alerts = Convert.ToInt32(s["OverdueCount"]) + Convert.ToInt32(s["Expiring"]) + Convert.ToInt32(s["ExpiredOpen"]);
-            btnAlerts.Text = ButtonText(btnAlerts);
-            if (btnAlerts != _active) btnAlerts.ForeColor = _alerts > 0 ? Color.FromArgb(242, 201, 76) : MenuText;
+            btnNavAlerts.Text = _alerts > 0 ? $"التنبيهات ({_alerts})" : "التنبيهات";
+            if (btnNavAlerts != _active) btnNavAlerts.ForeColor = _alerts > 0 ? Theme.Danger : NavText;
         }
         catch (Exception) { /* لا نوقف الواجهة بسبب العدّاد */ }
     }
 
-    // ------------------------------------------------------------ الشريط العلوي
+    // ------------------------------------------------------------ أزرار المستخدم
     private void btnChangePassword_Click(object? sender, EventArgs e)
     {
         using var d = new ChangePasswordDialog();
@@ -210,7 +161,7 @@ public partial class MainForm : Form
         using var d = new SettingsDialog();
         if (d.ShowDialog(this) != DialogResult.OK) return;
         Text = "نظام إدارة العقارات والإيجارات - " + AppSettings.OfficeName;
-        lblFooter.Text = AppSettings.OfficeName;
+        lblOffice.Text = AppSettings.OfficeName;
         if (pnlContent.Controls.Count > 0 && pnlContent.Controls[0] is IPage page) page.RefreshData();
         UpdateAlertCount();
     });
