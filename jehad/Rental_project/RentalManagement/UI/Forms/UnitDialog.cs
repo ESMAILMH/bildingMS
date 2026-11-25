@@ -16,6 +16,7 @@ public partial class UnitDialog : DialogBase
         cmbType.Items.AddRange(Labels.UnitTypes);
         cmbType.SelectedIndex = 0;
         if (propertyId is not null) cmbProperty.SelectedValue = propertyId;
+        numFloor.Value = 0;      // القيمة الافتراضية للوحدة الجديدة: الطابق الأرضي
         if (id is null) return;
 
         var r = PropertyDal.Unit(id.Value)!;
