@@ -13,8 +13,9 @@
 | `shot_payment.png` | 4.7 نافذة تسجيل دفعة |
 | `shot_receipt.png` | 4.8 إيصال القبض المطبوع |
 | `shot_units.png` | 4.9 شاشة الوحدات |
-| `shot_tenants.png` | 4.10 شاشة المستأجرين |
-| `shot_reports.png` | 4.11 شاشة التقارير |
-| `shot_contract_print.png` | 4.12 نموذج عقد الإيجار المطبوع |
-| `shot_statement.png` | 4.13 كشف حساب مستأجر |
-| `shot_users.png` | 4.14 شاشة المستخدمين والصلاحيات |
+| `shot_photos.png` | 4.10 معرض صور العقار أو الوحدة |
+| `shot_tenants.png` | 4.11 شاشة المستأجرين |
+| `shot_reports.png` | 4.12 شاشة التقارير |
+| `shot_contract_print.png` | 4.13 نموذج عقد الإيجار المطبوع |
+| `shot_statement.png` | 4.14 كشف حساب مستأجر |
+| `shot_users.png` | 4.15 شاشة المستخدمين والصلاحيات |
