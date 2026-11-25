@@ -118,7 +118,7 @@
             this.numFloor.Location = new System.Drawing.Point(196, 184);
             this.numFloor.Size = new System.Drawing.Size(120, 27);
             this.numFloor.DecimalPlaces = 0;
-            this.numFloor.Minimum = new decimal(new int[] { -5, 0, 0, 0 });
+            this.numFloor.Minimum = new decimal(new int[] { 5, 0, 0, -2147483648 });
             this.numFloor.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             this.numFloor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numFloor.Name = "numFloor";
