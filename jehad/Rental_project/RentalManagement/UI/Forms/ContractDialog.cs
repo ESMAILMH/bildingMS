@@ -87,7 +87,11 @@ public partial class ContractDialog : DialogBase
         foreach (var i in items) t.Rows.Add(i.No, i.DueDate, i.Months, i.Amount);
         Ui.BindGrid(gridSchedule, t);
         // الأعمدة الأربعة تملأ عرض الجدول دون شريط تمرير أفقي
-        foreach (DataGridViewColumn col in gridSchedule.Columns) { col.MinimumWidth = 60; col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; }
+        foreach (DataGridViewColumn col in gridSchedule.Columns)
+        {
+            col.MinimumWidth = col.GetPreferredWidth(DataGridViewAutoSizeColumnMode.ColumnHeader, true) + 12;  // العنوان كاملاً
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
         lblTotal.Text = items.Count == 0
             ? "أدخل المدة والإيجار ودورية الدفع لعرض الأقساط."
             : $"عدد الأقساط: {items.Count}     —     إجمالي قيمة العقد: {Ui.Money(items.Sum(i => i.Amount))}";
