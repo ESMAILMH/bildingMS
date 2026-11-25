@@ -289,7 +289,9 @@ public static partial class Ui
             col.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
             col.MinimumWidth = 80;
             grid.AutoResizeColumn(col.Index, mode);
-            col.Width = Math.Min(col.Width + 24, 420);
+            // العنوان كاملاً دون «...» (مع مساحة سهم الترتيب)
+            int header = col.GetPreferredWidth(DataGridViewAutoSizeColumnMode.ColumnHeader, true) + 20;
+            col.Width = Math.Min(Math.Max(col.Width, header) + 24, 420);
         }
         var last = visible[^1];
         last.MinimumWidth = last.Width;

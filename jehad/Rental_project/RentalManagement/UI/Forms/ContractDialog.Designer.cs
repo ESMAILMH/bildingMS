@@ -345,7 +345,7 @@
             this.AcceptButton = this.btnSave;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(1000, 555);
+            this.ClientSize = new System.Drawing.Size(1000, 596);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
